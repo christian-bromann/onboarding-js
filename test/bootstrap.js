@@ -14,13 +14,19 @@ GLOBAL.webdriverjs = require('webdriverjs');
 
 var capabilities = {}
 
-if(process.env.TRAVIS_BUILD_ID) {
-    capabilities.user = 'cb-onboarding-js';
-    capabilities.key  = 'XXX';
+capabilities.desiredCapabilities = {
+    browserName: process.env._BROWSER
 }
 
-capabilities.desiredCapabilities = {
-    browserName: process.env.BROWSER
+if(process.env.TRAVIS_BUILD_ID) {
+    capabilities.host = 'ondemand.saucelabs.com';
+    capabilities.port = 80;
+    capabilities.user = 'cb-onboarding';
+    capabilities.key  = 'ffd251ca-2705-49fc-a824-50333dc99eeb';
+    capabilities.desiredCapabilities.platform = process.env._PLATFORM.replace(/_/, ' ');
+    capabilities.desiredCapabilities.version  = process.env._VERSION;
+    capabilities.desiredCapabilities.tags = ['js', process.env._BROWSER];
+    capabilities.desiredCapabilities.name = 'onboarding test';
 }
 
 /**
