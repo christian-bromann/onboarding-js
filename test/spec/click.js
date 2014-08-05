@@ -1,6 +1,6 @@
 describe('button1', function() {
 
-    var selector_btn = process.env._MOBILETYPE === 'native' ? '//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAButton[1]' : '.btn1_clicked';
+    var selector_btn = process.env._MOBILETYPE === 'native' ? '//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAButton[1]' : '.btn1';
     var selector_btnClickedIndicator = process.env._MOBILETYPE === 'native' ? '//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAButton[1]' : '.btn1_clicked';
 
     before(function(done) {
