@@ -37,6 +37,7 @@ if(process.env._MOBILETYPE) {
 } else {
     capabilities.desiredCapabilities.platform = process.env._PLATFORM.replace(/_/, ' ');
     capabilities.desiredCapabilities.version  = process.env._VERSION;
+    capabilities.desiredCapabilities.tags.push('webdriver');
 }
 
 /**
