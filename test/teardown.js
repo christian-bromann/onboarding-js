@@ -2,7 +2,8 @@ var SauceLabs = require('saucelabs');
 
 after(function(done) {
 
-    var mocha = this;
+    var mocha = this,
+        sessionID = browser.requestHandler.sessionID;
 
     browser.end(function() {
 
@@ -21,8 +22,8 @@ after(function(done) {
             password: sauceKey
         });
 
-        console.log('update status of job ID', this.requestHandler.sessionID, ',', 'status: ' + testPassed);
-        sauceAccount.updateJob(this.requestHandler.sessionID, {
+        console.log('update status of job ID', sessionID, ',', 'status: ' + testPassed);
+        sauceAccount.updateJob(sessionID, {
             passed: testPassed,
             public: true
         }, function(err, res) {
