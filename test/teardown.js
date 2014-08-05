@@ -18,8 +18,8 @@ after(function(done) {
         });
 
         var sauceAccount = new SauceLabs({
-            username: sauceUser,
-            password: sauceKey
+            username: process.env.SAUCE_USERNAME,
+            password: process.env.SAUCE_ACCESS_KEY
         });
 
         console.log('update status of job ID', sessionID, ',', 'status: ' + testPassed);

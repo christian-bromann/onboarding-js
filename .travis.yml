@@ -9,6 +9,10 @@ node_js:
 before_script: npm install git://github.com/webdriverio/webdriverio.git
 
 env:
+  global:
+    - secure: WNZEfVrZjyk5XdboqF9ecDmLzjhaCa2MmdT/nGG5n8Stq88hfWsB8ycEcb9G5cM8LvJRM6ZHcoxVA6eslZ8OwNWs8UJHkdbqmMOPrITQwp2Ah01oJksyniQfWqy08S1wizggDLZG9dSOw31H33DrAavQg3EnJOjhUW/mmZ2hJZQ=
+    - secure: nyoVXGU+cbNgeogkydgsdJOLpweJ2ADsRdyRzq07wDAUeMwSLEFO68sEOREm0BsyFjJAt7coYTqnD/xmZ+XqHB0USDH4/++S3+nYE5v1WXJr6gy4J14f/QXkKc+D7onqLy8IVsrP1ayDCp1JkIXHTkP74DVD7zZyKC4VzMF2aH4=
+
   matrix:
     - _BROWSER: "chrome"
       _PLATFORM: "Windows_8"

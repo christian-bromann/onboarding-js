@@ -12,9 +12,7 @@ chai.should();
  */
 GLOBAL.webdriverjs = require('webdriverjs');
 
-var capabilities = {}
-GLOBAL.sauceUser = 'cb-onboarding';
-GLOBAL.sauceKey = 'ffd251ca-2705-49fc-a824-50333dc99eeb';
+var capabilities = {};
 
 capabilities.desiredCapabilities = {
     browserName: process.env._BROWSER || '',
@@ -24,8 +22,8 @@ capabilities.desiredCapabilities = {
 if (process.env.TRAVIS_BUILD_ID) {
     capabilities.host = 'ondemand.saucelabs.com';
     capabilities.port = 80;
-    capabilities.user = sauceUser;
-    capabilities.key = sauceKey;
+    capabilities.user = process.env.SAUCE_USERNAME;
+    capabilities.key = process.env.SAUCE_ACCESS_KEY;
     capabilities.desiredCapabilities.tags = ['js', process.env._BROWSER || 'none'];
     capabilities.desiredCapabilities.name = 'onboarding test';
 
