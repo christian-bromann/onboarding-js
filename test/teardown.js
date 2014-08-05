@@ -21,8 +21,8 @@ after(function(done) {
             password: sauceKey
         });
 
-        console.log('update status of job ID', browser.requestHandler.sessionID, ',', 'status: ' + testPassed);
-        sauceAccount.updateJob(browser.requestHandler.sessionID, {
+        console.log('update status of job ID', this.requestHandler.sessionID, ',', 'status: ' + testPassed);
+        sauceAccount.updateJob(this.requestHandler.sessionID, {
             passed: testPassed,
             public: true
         }, function(err, res) {
