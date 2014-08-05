@@ -15,15 +15,15 @@ GLOBAL.webdriverjs = require('webdriverjs');
 var capabilities = {}
 
 capabilities.desiredCapabilities = {
-    browserName: process.env._BROWSER
+    browserName: process.env._BROWSER || ''
 }
 
-if (process.env.TRAVIS_BUILD_ID) {
+if (true || process.env.TRAVIS_BUILD_ID) {
     capabilities.host = 'ondemand.saucelabs.com';
     capabilities.port = 80;
     capabilities.user = 'cb-onboarding';
     capabilities.key = 'ffd251ca-2705-49fc-a824-50333dc99eeb';
-    capabilities.desiredCapabilities.tags = ['js', process.env._BROWSER];
+    capabilities.desiredCapabilities.tags = ['js', process.env._BROWSER || 'none'];
     capabilities.desiredCapabilities.name = 'onboarding test';
 }
 
@@ -36,7 +36,7 @@ if (process.env._MOBILETYPE) {
     capabilities.desiredCapabilities.tags.push(process.env._MOBILETYPE);
 
     if (process.env._APP) {
-        capabilities.desiredCapabilities.deviceName = process.env._APP;
+        capabilities.desiredCapabilities.app = process.env._APP;
     }
 
 } else {
