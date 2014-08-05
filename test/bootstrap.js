@@ -29,6 +29,15 @@ if(process.env.TRAVIS_BUILD_ID) {
     capabilities.desiredCapabilities.name = 'onboarding test';
 }
 
+if(process.env._MOBILETYPE) {
+    capabilities.desiredCapabilities.platformVersion = process.env._PLATFORMVERSION;
+    capabilities.desiredCapabilities.platformName = process.env._PLATFORMNAME;
+    capabilities.desiredCapabilities.deviceName = process.env._DEVICENAME.replace(/_/, ' ');
+    capabilities.desiredCapabilities['appium-version']  = process.env._APPIUMVERSION;
+    capabilities.desiredCapabilities.tags.push('appium');
+    capabilities.desiredCapabilities.tags.push(process.env._MOBILETYPE);
+}
+
 /**
  * initialize client instance
  */
