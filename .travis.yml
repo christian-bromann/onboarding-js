@@ -6,6 +6,8 @@ language: node_js
 node_js:
   - '0.10'
 
+before_script: npm install git://github.com/webdriverio/webdriverio.git
+
 env:
   matrix:
     - _BROWSER: "chrome"

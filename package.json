@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/christian-bromann/onboarding",
   "dependencies": {
-    "chai": "^1.9.1",
-    "webdriverjs": "git://github.com/webdriverio/webdriverio.git#master"
+    "chai": "^1.9.1"
   }
 }
