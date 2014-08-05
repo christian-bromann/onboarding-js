@@ -13,7 +13,7 @@ after(function(done) {
         var testPassed = true;
 
         mocha.currentTest.parent.tests.forEach(function(testcase) {
-            testPassed = testcase.state === 'passed' && testPassed:
+            testPassed = testcase.state === 'passed' && testPassed;
         });
 
         var sauceAccount = new SauceLabs({
