@@ -26,4 +26,4 @@ env:
       _PLATFORMNAME: "iOS"
       _DEVICENAME: "iPhone_Simulator"
       _MOBILETYPE: "native"
-      _APP: "http://webdriverjs.christian-bromann.com/onboarding-demoapp.app.zip"
+      _APP: "http://webdriverjs.christian-bromann.com/onboarding-demoapp.zip"
