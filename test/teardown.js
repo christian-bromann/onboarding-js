@@ -21,7 +21,7 @@ after(function(done) {
             password: sauceKey
         });
 
-        sauceAccount.updateJob(client.requestHandler.sessionID, {
+        sauceAccount.updateJob(browser.requestHandler.sessionID, {
             passed: testPassed,
             public: true
         }, function(err, res) {
